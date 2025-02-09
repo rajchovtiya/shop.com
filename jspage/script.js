@@ -1,5 +1,12 @@
 
 $(function () {
+    document.querySelector(".manu_bar i").addEventListener("click", () => {
+        document.querySelector(".nav-links").style.left="0%"
+    })
+    document.querySelector(".cloj i").addEventListener("click",()=>{
+        document.querySelector(".nav-links").style.left="-100%"
+
+    })
 
     $('.slider').slick({
         centerMode: true,
@@ -10,12 +17,12 @@ $(function () {
         nextArrow: `.slick-arrow1`,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1023,
                 settings: {
                     arrows: true,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 4
+                    slidesToShow: 2,
                 }
             },
             {
