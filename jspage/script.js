@@ -1,10 +1,10 @@
 
 $(function () {
     document.querySelector(".manu_bar i").addEventListener("click", () => {
-        document.querySelector(".nav-links").style.left="0%"
+        document.querySelector(".nav-links").style.left = "0%"
     })
-    document.querySelector(".cloj i").addEventListener("click",()=>{
-        document.querySelector(".nav-links").style.left="-100%"
+    document.querySelector(".cloj i").addEventListener("click", () => {
+        document.querySelector(".nav-links").style.left = "-100%"
 
     })
 
@@ -39,14 +39,8 @@ $(function () {
 
     let mainimg = document.querySelector(".main-t-shirtimg img")
     let smallbox = document.querySelectorAll(".t-shirtsmallbox img")
-    let sizbox2 = document.querySelectorAll(".sizbox")
-    let inkriment = document.querySelector("#inkriment")
-    let dikriment = document.querySelector("#dikriment")
-    let productp = document.querySelector(".product-nugbox p")
     let bodergre = document.querySelectorAll(".bodergre")
-    let colorbox = document.querySelectorAll(".colorbox")
 
-    let i = 1;
 
 
     function productDetailPage() {
@@ -63,29 +57,7 @@ $(function () {
             })
         })
 
-        sizbox2.forEach((e) => {
-            e.addEventListener("click", () => {
-                sizbox2.forEach((eml) => {
-                    eml.setAttribute("class", "sizbox")
-                })
-                e.classList.add("bg-black")
-            })
-        })
 
-        dikriment.addEventListener("click", () => {
-            if (i >= 1) {
-                i++;
-            }
-            productp.innerText = i
-
-        })
-        inkriment.addEventListener("click", () => {
-            if (i > 1) {
-                i--;
-            }
-            productp.innerText = i
-
-        })
 
         bodergre.forEach((e) => {
             e.addEventListener("click", () => {
@@ -93,15 +65,6 @@ $(function () {
                     eml.setAttribute("class", "bodergre")
                 })
                 e.classList.add("boderblank")
-            })
-        })
-
-        colorbox.forEach((e) => {
-            e.addEventListener("click", function () {
-                colorbox.forEach((em) => {
-                    em.children[0].setAttribute("id", "ikn-one")
-                })
-                e.children[0].setAttribute("id", "")
             })
         })
 
@@ -118,10 +81,18 @@ $(function () {
 $(function () {
     let prodbox = document.querySelectorAll(".boys-produts-box")
     let Tdhirtboximg = document.querySelectorAll(".t-shirtsmallbox img")
+    let colorbox = document.querySelectorAll(".colorbox")
+    let sizbox2 = document.querySelectorAll(".sizbox")
+    let inkriment = document.querySelector("#inkriment")
+    let dikriment = document.querySelector("#dikriment")
+    let productp = document.querySelector(".product-nugbox p")
+
     let productdetalis = []
     let offerMoney = null
     let offertaka = null
     let offerretig = null
+    let i = 1;
+
     prodbox.forEach((e) => {
         e.addEventListener("mouseover", () => {
             let imgSrc = e.children[0].children[0].children[0].src;
@@ -158,6 +129,37 @@ $(function () {
             $(".offer").hide()
 
         }
+        colorbox.forEach((e) => {
+            e.addEventListener("click", function () {
+                colorbox.forEach((em) => {
+                    em.children[0].setAttribute("id", "ikn-one")
+                })
+                e.children[0].setAttribute("id", "")
+            })
+        })
+
+        sizbox2.forEach((e) => {
+            e.addEventListener("click", () => {
+                sizbox2.forEach((eml) => {
+                    eml.setAttribute("class", "sizbox")
+                })
+                e.classList.add("bg-black")
+            })
+        })
+        dikriment.addEventListener("click", () => {
+            if (i >= 1) {
+                i++;
+            }
+            productp.innerText = i
+
+        })
+        inkriment.addEventListener("click", () => {
+            if (i > 1) {
+                i--;
+            }
+            productp.innerText = i
+
+        })
 
 
     }
